@@ -1,42 +1,47 @@
-# Desafio back-end da mLearn
+#Desafio 1
+#####Neste desafio foi implementado uma logica para percorrer uma matriz com o intuito de subtrair suas diagonais.
 
-Esse repositório é o nosso desafio para avaliar o quão bom desenvolvedor back-end você é.
+#####Além disto uma verificação para saber se ela é uma matriz quadrada
 
-Provavelmente você já está participando do nosso processo seletivo, mas se você caiu aqui por acaso, leia o documento até o final e caso haja interesse, você pode começar daqui mesmo.
+```php
 
+//Defina os valores da matriz quadrada na variavel a baixo
 
-## Sobre o desafio
+$matriz_quadrada = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+];
+$valuelfr = 0;
+$valuerfl = 0;
+for ($i = 0; $i < count($matriz_quadrada); $i++) {
+    
+    $ultimo_valor = (count($matriz_quadrada[$i]) - $i - 1);
+    
+    if(count($matriz_quadrada) != count($matriz_quadrada[$i])){
+        echo "Esta matriz não é quadrada, defina um outro valor!'";
+        return;
+    }
+    
+    $valuelfr = $valuelfr + $matriz_quadrada[$i][$i];
+    $valuerfl = $valuerfl + $matriz_quadrada[$i][$ultimo_valor];
+    
+}  
+echo $valuelfr - $valuerfl;
 
-Esse é um desafio, não um teste ou uma prova de faculdade, portanto não há uma única resposta certa.
+```
 
-Daremos a você alguns requisitos que devem ser cumpridos, e pelos quais você será avaliado, mas deixamos livre a escolha do método de solução.
+#Desafio 2
 
-O que nós esperamos aprender sobre você com o desafio:
+####Para conseguir rodar meu projeto faça os seguintes passos:
 
-- Seu estilo de trabalho
-- Como você pensa e resolve problemas
-- Como você se comunica
+#####Crie um banco de dados MYSQL
+#####Entre na pasta raiz do projeto
+#####Verifique se está na branch correta - daniel-oliveira( ou execute: git checkout daniel-oliveira)
+#####Crie um novo arquivo ".env" e configure igualmente o arquivo .env.example com suas configurações de banco
+#####Após isso alguns comandos sendo eles:
+######composer install
+######npm install
+######php artisan migrate
+######php artisan serve
 
-O que nós esperamos que você aprenda sobre a mLearn:
-
-- Como nós trabalhamos como um time.
-- Tenha uma visão próxima dos desafios que enfrentamos no dia-a-dia.
-
-## Próximos passos
-
-1. Faça um _fork_ desse repositório para sua conta pessoal.
-2. As instruções do desafio se encontram no arquivo [`CHALLENGE.md`](/CHALLENGE.md).
-2. Resolva o desafio da forma que você julgar mais adequada.
-3. Utilize uma _branch_ nomeada com o formato (`nome-sobrenome`) para o desenvolvimento. E submeta o _pull-request_ para essa mesma _branch_.
-
-## Considerações
-
-- Nós não iremos limitar a sua escolha por ferramentas e bibliotecas. Porém faça escolhas que sejam condizentes com o desafio apresentado. Para que utilizar uma bazuca para matar uma formiga?
-- O tempo sugerido para execução do teste é  de **2 horas e meia**.
-- Tente escrever o melhor código possível para que possamos avaliar o seu _pull-request_ com mais facilidade. E lembre-se: Você vai ter que explicar pessoalmente para nós depois.
-
-## Dúvidas?
-
-Ficou com alguma dúvida sobre como irá funcionar o processo? Entre em contato que nós te ajudaremos com o processo.
-
-**Boa sorte!**
